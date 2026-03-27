@@ -185,13 +185,10 @@
     </div>
 
 <!-- 商品詳情彈窗 -->
-<div id="productModal" class="fixed inset-0 z-[100] hidden bg-black/60 flex items-center justify-center p-6">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 relative">
-        <button onclick="closeProductModal()" class="absolute top-3 right-3 text-gray-400 hover:text-black">✕</button>
-
-        <div id="productModalContent">
-            <!-- JS 填入 -->
-        </div>
+<div id="productModal" class="fixed inset-0 z-[100] hidden bg-black/60 flex items-center justify-center p-4 md:p-6">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 relative max-h-[90vh] overflow-y-auto">
+        <button onclick="closeProductModal()" class="absolute top-3 right-3 text-gray-400 hover:text-black z-10">✕</button>
+        <div id="productModalContent"></div>
     </div>
 </div>
 
@@ -202,7 +199,7 @@
     <img
         src="images/logo-title.png"
         alt="我是一隻魚"
-        class="h-10 md:h-12 w-auto object-contain"
+        class="h-16 md:h-20 w-auto object-contain"
     />
 </button>
             <nav class="flex items-center space-x-6">
@@ -273,7 +270,7 @@
             <h3 class="text-3xl font-bold text-[#708090] mb-12 tracking-widest text-center">深海裡的聲音</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <article class="bg-deepsea-900 border border-deepsea-800 rounded-xl overflow-hidden hover:border-deepsea-500 transition-colors duration-300 group">
-                    <div class="aspect-square bg-black flex items-center justify-center text-gray-600 relative overflow-hidden">
+                    <div class="aspect-square bg-[#F4FAFF] rounded-md mb-4 flex items-center justify-center text-xs text-gray-500 overflow-hidden relative">
                         
                         <div class="absolute inset-0 bg-gradient-to-tr from-deepsea-800/50 to-transparent group-hover:scale-110 transition-transform duration-500"></div>
                     </div>
@@ -336,22 +333,98 @@
     <script>
         // 1. 商品數據
         const products = [
-            { id: 1, name: "門票", price: 500 },
-            { id: 2, name: "雙人門票", price: 500 },
-            { id: 3, name: "專場 T-shirt", price: 500 },
-            { id: 4, name: "個人寫真集", price: 500 },
-            { id: 5, name: "海報", price: 500 },
-            { id: 6, name: "貼紙", price: 500 },
-            { id: 7, name: "迷你專輯吊飾", price: 500 },
-            { id: 8, name: "打火機", price: 500 },
-            { id: 9, name: "毛巾", price: 500 },
-            { id: 10, name: "卡夾", price: 500 },
-            { id: 11, name: "小卡盲包", price: 500 },
-            { id: 12, name: "徽章", price: 500 },
-            { id: 13, name: "明信片", price: 500 }
-        ];
+    {
+        id: 1,
+        name: "門票",
+        price: 500,
+        description: "《我是一隻魚》專場單人門票，採現場報到入場，不寄送實體票券。",
+        images: ["images/ticket-1.jpg", "images/ticket-2.jpg"]
+    },
+    {
+        id: 2,
+        name: "雙人門票",
+        price: 500,
+        description: "《我是一隻魚》專場雙人門票，採現場報到入場，不寄送實體票券。",
+        images: ["images/ticket2-1.jpg", "images/ticket2-2.jpg"]
+    },
+    {
+        id: 3,
+        name: "專場 T-shirt",
+        price: 500,
+        description: "專場限定 T-shirt，布料柔軟、版型寬鬆，適合日常穿搭與收藏。",
+        images: ["images/tshirt-1.jpg", "images/tshirt-2.jpg", "images/tshirt-3.jpg"],
+        sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
+    },
+    {
+        id: 4,
+        name: "個人寫真集",
+        price: 500,
+        description: "收錄專場視覺與個人拍攝影像，作為這次演出的紀念收藏。",
+        images: ["images/book-1.jpg", "images/book-2.jpg"]
+    },
+    {
+        id: 5,
+        name: "專場海報",
+        price: 500,
+        description: "專場限定海報，適合收藏與裱框展示。",
+        images: ["images/poster-1.jpg", "images/poster-2.jpg"]
+    },
+    {
+        id: 6,
+        name: "專場毛巾",
+        price: 500,
+        description: "專場限定毛巾，適合日常使用與收藏。",
+        images: ["images/towel-1.jpg", "images/towel-2.jpg"]
+    },
+    {
+        id: 7,
+        name: "迷你專輯吊飾",
+        price: 500,
+        description: "迷你專輯造型吊飾，適合掛在包包或鑰匙圈上。",
+        images: ["images/keychain-1.jpg", "images/keychain-2.jpg"]
+    },
+    {
+        id: 8,
+        name: "魚頭人打火機",
+        price: 500,
+        description: "專場限定打火機，收藏感十足。",
+        images: ["images/lighter-1.jpg", "images/lighter-2.jpg"]
+    },
+    {
+        id: 9,
+        name: "偶像小卡卡夾",
+        price: 500,
+        description: "透明卡夾，適合放入小卡與日常配戴。",
+        images: ["images/cardholder-1.jpg", "images/cardholder-2.jpg"]
+    },
+    {
+        id: 10,
+        name: "小卡盲包",
+        price: 500,
+        description: "隨機小卡盲包，收藏樂趣滿滿。",
+        images: ["images/photocard-1.jpg", "images/photocard-2.jpg"]
+    },
+    {
+        id: 11,
+        name: "魚頭人徽章",
+        price: 500,
+        description: "專場限定徽章，可別在包包或衣服上。",
+        images: ["images/badge-1.jpg", "images/badge-2.jpg"]
+    },
+    {
+        id: 12,
+        name: "明信片2入組",
+        price: 500,
+        description: "專場限定明信片二入組，適合收藏或寄送。",
+        images: ["images/postcard-1.jpg", "images/postcard-2.jpg"]
+    }
+];
+       
 
         let cart = JSON.parse(localStorage.getItem('nemo_cart')) || [];
+
+let currentProduct = null;
+let currentImageIndex = 0;
 
         // 2. DOM 元素
         const productGrid = document.getElementById('productGrid');
@@ -382,9 +455,10 @@ function getShippingFee() {
         function renderProducts() {
             productGrid.innerHTML = products.map(product => `
     <div class="bg-white rounded-2xl p-4 border border-[#D2E9FF] shadow-sm hover:shadow-md transition-all group flex flex-col">
-        <div class="aspect-square bg-[#F4FAFF] rounded-md mb-4 flex items-center justify-center text-xs text-gray-500 overflow-hidden relative">
-            <div class="absolute inset-0 bg-deepsea-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
+        <div class="aspect-square bg-[#F4FAFF] rounded-md mb-4 overflow-hidden relative">
+    <img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-deepsea-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
         <h4 class="text-[#708090] font-medium mb-1 truncate">${product.name}</h4>
         <p class="text-sky-700 font-bold mb-4 font-serif">NT$ ${product.price}</p>
 
@@ -468,7 +542,10 @@ function getShippingFee() {
                         IMG
                     </div>
                     <div class="flex-1">
-                        <h4 class="text-white text-sm font-bold">${item.name}</h4>
+                        <h4 class="text-white text-sm font-bold">
+    ${item.name}
+    ${item.selectedSize ? `<span class="block text-xs text-gray-400 mt-1">尺寸：${item.selectedSize}</span>` : ''}
+</h4>
                         <p class="text-deepsea-300 text-xs font-serif">NT$ ${item.price}</p>
                     </div>
                     <div class="flex items-center border border-deepsea-800 rounded bg-abyss">
@@ -596,25 +673,132 @@ ${deliveryMethod === 'pickup'
         updateBadge();
 function openProductDetail(productId) {
     const product = products.find(p => p.id === productId);
+    currentProduct = product;
+    currentImageIndex = 0;
+    renderProductModal();
 
+    document.getElementById('productModal').classList.remove('hidden');
+}
+
+function renderProductModal() {
     const modal = document.getElementById('productModal');
     const content = document.getElementById('productModalContent');
+    const product = currentProduct;
+
+    if (!product) return;
+
+    const hasSizes = Array.isArray(product.sizes) && product.sizes.length > 0;
 
     content.innerHTML = `
-        <div class="flex flex-col items-center text-center">
-            <div class="w-full h-48 bg-[#F4FAFF] rounded mb-4 flex items-center justify-center text-gray-400">
-                商品圖片
-            </div>
-            <h3 class="text-xl font-bold mb-2">${product.name}</h3>
-            <p class="text-sky-700 font-bold mb-4">NT$ ${product.price}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <div class="relative w-full h-72 md:h-96 bg-[#F4FAFF] rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                    <img
+                        src="${product.images[currentImageIndex]}"
+                        alt="${product.name}"
+                        class="w-full h-full object-cover"
+                    />
 
-            <button onclick="addToCart(${product.id}); closeProductModal()" class="w-full bg-[#D2E9FF] py-2 rounded-full font-bold">
-                加入購物車
-            </button>
+                    ${product.images.length > 1 ? `
+                        <button onclick="prevProductImage()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700 w-9 h-9 rounded-full shadow flex items-center justify-center">‹</button>
+                        <button onclick="nextProductImage()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700 w-9 h-9 rounded-full shadow flex items-center justify-center">›</button>
+                    ` : ''}
+                </div>
+
+                ${product.images.length > 1 ? `
+                    <div class="flex gap-2 overflow-x-auto">
+                        ${product.images.map((img, index) => `
+                            <button onclick="setProductImage(${index})" class="shrink-0 w-16 h-16 rounded-lg overflow-hidden border ${index === currentImageIndex ? 'border-sky-500' : 'border-[#D2E9FF]'}">
+                                <img src="${img}" alt="${product.name}" class="w-full h-full object-cover" />
+                            </button>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-2xl font-bold text-[#708090] mb-2">${product.name}</h3>
+                <p class="text-sky-700 font-bold text-xl mb-4">NT$ ${product.price}</p>
+
+                <div class="mb-6">
+                    <h4 class="text-sm font-semibold text-slate-500 mb-2">商品敘述</h4>
+                    <p class="text-sm leading-7 text-[#708090]">
+                        ${product.description || '暫無商品敘述'}
+                    </p>
+                </div>
+
+                ${hasSizes ? `
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-slate-500 mb-2">尺寸選擇</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${product.sizes.map(size => `
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="productSize" value="${size}" class="hidden peer">
+                                    <span class="inline-flex items-center justify-center min-w-[52px] px-4 py-2 rounded-full border border-[#D2E9FF] text-sm text-[#708090] peer-checked:bg-[#D2E9FF] peer-checked:text-sky-800">
+                                        ${size}
+                                    </span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
+                <button onclick="addCurrentProductToCart()" class="mt-auto w-full bg-[#D2E9FF] py-3 rounded-full font-bold text-sky-800 hover:bg-sky-200 transition-all">
+                    加入購物車
+                </button>
+            </div>
         </div>
     `;
+}
+function prevProductImage() {
+    if (!currentProduct) return;
+    currentImageIndex = (currentImageIndex - 1 + currentProduct.images.length) % currentProduct.images.length;
+    renderProductModal();
+}
 
-    modal.classList.remove('hidden');
+function nextProductImage() {
+    if (!currentProduct) return;
+    currentImageIndex = (currentImageIndex + 1) % currentProduct.images.length;
+    renderProductModal();
+}
+
+function setProductImage(index) {
+    currentImageIndex = index;
+    renderProductModal();
+}
+
+function addCurrentProductToCart() {
+    if (!currentProduct) return;
+
+    let selectedSize = null;
+
+    if (currentProduct.sizes && currentProduct.sizes.length > 0) {
+        const checked = document.querySelector('input[name="productSize"]:checked');
+        if (!checked) {
+            alert('請先選擇尺寸');
+            return;
+        }
+        selectedSize = checked.value;
+    }
+
+    const cartItemId = selectedSize ? `${currentProduct.id}-${selectedSize}` : `${currentProduct.id}`;
+    const existingItem = cart.find(item => item.cartItemId === cartItemId);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...currentProduct,
+            cartItemId,
+            selectedSize,
+            quantity: 1
+        });
+    }
+
+    saveCart();
+    renderCart();
+    closeProductModal();
+    toggleCart(true);
 }
 
 function closeProductModal() {
