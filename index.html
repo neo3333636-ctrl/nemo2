@@ -203,7 +203,7 @@
     </header>
 
     <!-- 1. Hero 首屏 -->
-    <section class="relative min-h-screen overflow-hidden pt-20 bg-[#D2E9FF]">
+    <section class="relative h-[65vh] md:h-[80vh] overflow-hidden pt-20 bg-[#D2E9FF]">
     <div class="absolute inset-0">
         <img
             src="images/cover.jpg"
@@ -376,7 +376,7 @@ function getShippingFee() {
                     </div>
                     <h4 class="text-white font-medium mb-1 truncate">${product.name}</h4>
                     <p class="text-sky-700 font-bold mb-4 font-serif">NT$ ${product.price}</p>
-                    <button class="mt-auto w-full bg-[#D2E9FF] text-sky-800 py-2 rounded-full hover:bg-sky-200 transition-all text-sm font-bold">
+                   <button onclick="addToCart(${product.id})" class="mt-auto w-full bg-[#D2E9FF] text-sky-800 py-2 rounded-full hover:bg-sky-200 transition-all text-sm font-bold">
     加入購物車
 </button>
 <button onclick="openProductDetail(${product.id})" class="w-full border border-[#D2E9FF] text-sky-700 py-2 rounded-full hover:bg-[#F4FAFF] transition-all text-sm font-bold mb-2">
