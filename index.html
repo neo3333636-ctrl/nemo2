@@ -175,6 +175,16 @@
             <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
             </div>
+<!-- 商品詳情彈窗 -->
+<div id="productModal" class="fixed inset-0 z-[100] hidden bg-black/60 flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 relative">
+        <button onclick="closeProductModal()" class="absolute top-3 right-3 text-gray-400 hover:text-black">✕</button>
+
+        <div id="productModalContent">
+            <!-- JS 填入 -->
+        </div>
+    </div>
+</div>
             <h4 class="text-xl font-bold text-white mb-2">訂單提交成功</h4>
            <p id="successMessage" class="text-gray-400 text-sm mb-6">
     感謝您的支持，我們已收到您的訂單！
@@ -213,7 +223,7 @@
     </div>
 </section>
 
-	<section class="py-16 px-6 bg-white border-b border-[#D2E9FF]">
+	<section class="relative z-20 -mt-[120px] md:-mt-[180px] py-16 px-6">
     <div class="max-w-4xl mx-auto flex flex-col items-center text-center animate-float">
         <img
             src="images/title1.png"
@@ -582,6 +592,32 @@ ${deliveryMethod === 'pickup'
         renderProducts();
         renderCart();
         updateBadge();
+function openProductDetail(productId) {
+    const product = products.find(p => p.id === productId);
+
+    const modal = document.getElementById('productModal');
+    const content = document.getElementById('productModalContent');
+
+    content.innerHTML = `
+        <div class="flex flex-col items-center text-center">
+            <div class="w-full h-48 bg-[#F4FAFF] rounded mb-4 flex items-center justify-center text-gray-400">
+                商品圖片
+            </div>
+            <h3 class="text-xl font-bold mb-2">${product.name}</h3>
+            <p class="text-sky-700 font-bold mb-4">NT$ ${product.price}</p>
+
+            <button onclick="addToCart(${product.id}); closeProductModal()" class="w-full bg-[#D2E9FF] py-2 rounded-full font-bold">
+                加入購物車
+            </button>
+        </div>
+    `;
+
+    modal.classList.remove('hidden');
+}
+
+function closeProductModal() {
+    document.getElementById('productModal').classList.add('hidden');
+}
 
     </script>
 </body>
