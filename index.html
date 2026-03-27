@@ -77,7 +77,7 @@
     <div id="cartDrawer" class="cart-drawer fixed right-0 top-0 h-full w-full max-w-md bg-deepsea-900 z-[70] shadow-2xl border-l border-deepsea-700 flex flex-col">
         <div class="p-6 border-b border-deepsea-800 flex justify-between items-center shrink-0">
             <h2 class="text-xl font-bold text-white tracking-widest flex items-center gap-2">
-                <svg class="w-6 h-6 text-[#708090]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                <svg class="w-6 h-6 text-deepsea-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                 您的購物車
             </h2>
             <button id="closeCart" class="text-gray-400 hover:text-white">
@@ -94,7 +94,7 @@
 
             <!-- 結帳表單 (僅在有商品時顯示) -->
             <div id="checkoutFormSection" class="hidden space-y-6 border-t border-deepsea-800 pt-8">
-                <h3 class="text-lg font-bold text-white tracking-widest border-l-4 border-[#708090] pl-3">收件與付款資訊</h3>
+                <h3 class="text-lg font-bold text-white tracking-widest border-l-4 border-deepsea-300 pl-3">收件與付款資訊</h3>
                 <form id="orderForm" class="space-y-4">
                     <div>
                         <label class="block text-xs text-gray-500 mb-1">姓名 *</label>
@@ -160,10 +160,10 @@
     </div>
     <div class="flex justify-between text-lg pt-2 border-t border-deepsea-800">
         <span class="text-gray-300">總計金額</span>
-        <span id="cartTotal" class="text-[#708090] font-bold font-serif">NT$ 0</span>
+        <span id="cartTotal" class="text-deepsea-300 font-bold font-serif">NT$ 0</span>
     </div>
 </div>
-            <button id="submitOrderBtn" class="w-full bg-[#708090] text-abyss py-3 rounded-full font-bold tracking-widest hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+            <button id="submitOrderBtn" class="w-full bg-deepsea-300 text-abyss py-3 rounded-full font-bold tracking-widest hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
                 提交訂單並付款
             </button>
         </div>
@@ -171,7 +171,7 @@
 
     <!-- 成功訊息彈窗 (靜態 UI) -->
     <div id="successModal" class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm hidden">
-        <div class="bg-deepsea-900 border border-[#708090] p-8 rounded-2xl max-w-sm w-full text-center">
+        <div class="bg-deepsea-900 border border-deepsea-300 p-8 rounded-2xl max-w-sm w-full text-center">
             <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
             </div>
@@ -179,7 +179,7 @@
            <p id="successMessage" class="text-gray-400 text-sm mb-6">
     感謝您的支持，我們已收到您的訂單！
 </p>
-            <button onclick="closeModal()" class="w-full bg-[#708090] text-abyss py-2 rounded-full font-bold">太棒了</button>
+            <button onclick="closeModal()" class="w-full bg-deepsea-300 text-abyss py-2 rounded-full font-bold">太棒了</button>
         </div>
     </div>
 
@@ -190,11 +190,11 @@
             <nav class="flex items-center space-x-6">
                 <div class="hidden md:flex space-x-6 text-sm text-gray-400">
                     <a href="#about" class="hover:text-[#708090] transition-colors">關於專場</a>
-                    <a href="#music" class="hover:text-[#708090] transition-colors">單曲試聽</a>
-                    <a href="#merch" class="hover:text-[#708090] transition-colors">周邊商品</a>
+                    <a href="#music" class="hover:text-deepsea-300 transition-colors">單曲試聽</a>
+                    <a href="#merch" class="hover:text-deepsea-300 transition-colors">周邊商品</a>
                 </div>
                 <!-- 購物車按鈕 -->
-                <button id="openCart" class="relative p-2 text-[#708090] hover:text-white transition-colors">
+                <button id="openCart" class="relative p-2 text-[#708090] hover:text-slate-800 transition-colors">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                     <span id="cartBadge" class="absolute top-0 right-0 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
                 </button>
@@ -239,9 +239,9 @@
         <div class="max-w-3xl mx-auto text-center">
             <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 tracking-widest">潛入，最深的情緒之海</h3>
             <p class="text-gray-400 leading-relaxed md:text-lg text-justify md:text-center space-y-6 flex flex-col font-light">
-                <span>這是一場探索<strong class="text-[#708090] font-normal">水底世界</strong>的聽覺旅程。</span>
-                <span>在這個充滿<strong class="text-[#708090] font-normal">情緒感</strong>的空間裡，那些無法言說的悲傷與溫柔，都會被海水包覆。</span>
-                <span>集結了 Nemo 徐毓翎 累積多時的<strong class="text-[#708090] font-normal">創作</strong>，帶你游進內心最深邃的地方，感受每一次呼吸的起伏。</span>
+                <span>這是一場探索<strong class="text-deepsea-300 font-normal">水底世界</strong>的聽覺旅程。</span>
+                <span>在這個充滿<strong class="text-deepsea-300 font-normal">情緒感</strong>的空間裡，那些無法言說的悲傷與溫柔，都會被海水包覆。</span>
+                <span>集結了 Nemo 徐毓翎 累積多時的<strong class="text-deepsea-300 font-normal">創作</strong>，帶你游進內心最深邃的地方，感受每一次呼吸的起伏。</span>
             </p>
         </div>
     </section>
@@ -289,11 +289,11 @@
     <section id="merch" class="py-24 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-white mb-4 tracking-widest">專場周邊商品</h3>
+                <h3 class="text-3xl font-bold text-[#708090] mb-4 tracking-widest">專場周邊商品</h3>
                 <p class="text-gray-400 font-light">點擊品項加入購物車</p>
             </div>
 
-<div class="mb-10 max-w-2xl mx-auto bg-deepsea-800/70 border border-[#708090]/30 rounded-xl px-6 py-5 text-sm text-gray-200 leading-7 shadow-lg">
+<div class="mb-10 max-w-2xl mx-auto bg-deepsea-800/70 border border-deepsea-300/30 rounded-xl px-6 py-5 text-sm text-gray-200 leading-7 shadow-lg">
     <p>※ 本次門票為現場報到入場，不寄送實體票券</p>
     <p>※ 訂單需完成匯款才成立</p>
     <p>※ 請於 24 小時內完成匯款</p>
@@ -448,7 +448,7 @@ function getShippingFee() {
                     </div>
                     <div class="flex-1">
                         <h4 class="text-white text-sm font-bold">${item.name}</h4>
-                        <p class="text-[#708090] text-xs font-serif">NT$ ${item.price}</p>
+                        <p class="text-deepsea-300 text-xs font-serif">NT$ ${item.price}</p>
                     </div>
                     <div class="flex items-center border border-deepsea-800 rounded bg-abyss">
                         <button onclick="updateQuantity(${item.id}, -1)" class="px-2 py-1 text-gray-400 hover:text-white transition-colors">-</button>
