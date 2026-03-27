@@ -454,7 +454,6 @@ function getShippingFee() {
         // 3. 渲染商品列表
         function renderProducts() {
             productGrid.innerHTML = products.map(product => `
-   productGrid.innerHTML = products.map(product => `
     <div class="bg-white rounded-2xl p-4 border border-[#D2E9FF] shadow-sm hover:shadow-md transition-all group flex flex-col">
         <div class="aspect-square bg-[#F4FAFF] rounded-md mb-4 overflow-hidden relative">
             <img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover" />
