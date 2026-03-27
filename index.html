@@ -363,17 +363,21 @@ function getShippingFee() {
         // 3. 渲染商品列表
         function renderProducts() {
             productGrid.innerHTML = products.map(product => `
-    <div class="bg-white rounded-2xl p-4 border border-[#D2E9FF] shadow-sm hover:shadow-md transition-all group flex flex-col">
-        <div class="aspect-square bg-[#03121d] rounded-md mb-4 flex items-center justify-center text-xs text-gray-500 overflow-hidden relative">
-            <div class="absolute inset-0 bg-deepsea-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <h4 class="text-slate-700 font-medium mb-1 truncate">${product.name}</h4>
-        <p class="text-sky-700 font-bold mb-4 font-serif">NT$ ${product.price}</p>
-        <button onclick="addToCart(${product.id})" class="mt-auto w-full bg-[#D2E9FF] text-sky-800 py-2 rounded-full hover:bg-sky-200 transition-all text-sm font-bold">
-            加入購物車
-        </button>
-    </div>
-`).join('');
+                <div class="bg-white rounded-2xl p-4 border border-[#D2E9FF] shadow-sm hover:shadow-md transition-all group flex flex-col">
+                    <div class="aspect-square bg-[#03121d] rounded-md mb-4 flex items-center justify-center text-xs text-gray-500 overflow-hidden relative">
+                         
+                         <div class="absolute inset-0 bg-deepsea-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="text-white font-medium mb-1 truncate">${product.name}</h4>
+                    <p class="text-sky-700 font-bold mb-4 font-serif">NT$ ${product.price}</p>
+                    <button class="mt-auto w-full bg-[#D2E9FF] text-sky-800 py-2 rounded-full hover:bg-sky-200 transition-all text-sm font-bold">
+    加入購物車
+</button>
+<button onclick="openProductDetail(${product.id})" class="w-full border border-[#D2E9FF] text-sky-700 py-2 rounded-full hover:bg-[#F4FAFF] transition-all text-sm font-bold mb-2">
+    查看詳情
+</button>
+                </div>
+            `).join('');
         }
 
         // 4. 購物車核心功能
