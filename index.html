@@ -198,7 +198,13 @@
     <!-- Navbar -->
     <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-[#D2E9FF]">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-[#708090] font-bold tracking-widest text-lg cursor-pointer" onclick="window.scrollTo(0,0)">NEMO</h1>
+          <button onclick="window.scrollTo(0,0)" class="cursor-pointer">
+    <img
+        src="images/logo-title.png"
+        alt="我是一隻魚"
+        class="h-10 md:h-12 w-auto object-contain"
+    />
+</button>
             <nav class="flex items-center space-x-6">
                 <div class="hidden md:flex space-x-6 text-sm text-gray-400">
                     <a href="#about" class="hover:text-[#708090] transition-colors">關於專場</a>
@@ -215,24 +221,18 @@
     </header>
 
     <!-- 1. Hero 首屏 -->
-    <section class="relative h-[65vh] md:h-[80vh] overflow-hidden pt-20 bg-[#D2E9FF]">
+    <section class="relative min-h-screen overflow-hidden pt-20 bg-[#D2E9FF] flex items-center justify-center">
     <div class="absolute inset-0">
         <img
-            src="images/cover.jpg"
-            alt="專場主視覺"
-            class="w-full h-full object-cover"
-        />
+    src="images/cover.jpg"
+    alt="專場主視覺"
+    class="w-full h-full object-contain bg-[#D2E9FF]"
+/>
     </div>
 </section>
 
 	<section class="relative z-20 -mt-[120px] md:-mt-[180px] py-16 px-6">
-    <div class="max-w-4xl mx-auto flex flex-col items-center text-center animate-float">
-        <img
-            src="images/title1.png"
-            alt="我是一隻魚"
-            class="w-[260px] md:w-[420px] lg:w-[520px] mb-8 object-contain"
-        />
-
+    <div class="max-w-4xl mx-auto flex flex-col items-center text-center animate-float bg-white/80 backdrop-blur-md rounded-2xl py-10 px-6 shadow-lg">
         <div class="flex flex-col space-y-3 text-[#708090] tracking-wider items-center">
             <p class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-[#708090]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
