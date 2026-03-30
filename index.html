@@ -171,7 +171,7 @@
 
     <!-- 成功訊息彈窗 (靜態 UI) -->
     <div id="successModal" class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm hidden">
-        <div class="bg-deepsea-900 border border-deepsea-300 p-8 rounded-2xl max-w-md w-full max-h-[80vh] overflow-y-auto text-center">
+        <div class="bg-deepsea-900 border border-deepsea-300 p-8 rounded-2xl max-w-sm w-full text-center">
             <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
             </div>
@@ -439,7 +439,6 @@ let currentProduct = null;
 let currentImageIndex = 0;
 let currentProductQuantity = 1;
 let cardQuantities = {};
-let cardImageIndexes = {};
 
         // 2. DOM 元素
         const productGrid = document.getElementById('productGrid');
@@ -468,21 +467,6 @@ function getShippingFee() {
 function getCardQuantity(productId) {
     return cardQuantities[productId] || 1;
 }
-function buildCompactOrderSummary(items) {
-    const previewItems = items.slice(0, 2).map(item => {
-        const sizeText = item.selectedSize ? `（${item.selectedSize}）` : '';
-        return `${item.name}${sizeText} × ${item.quantity}`;
-    });
-
-    const remainingTypes = items.length - 2;
-
-    if (remainingTypes > 0) {
-        previewItems.push(`以及其他 ${remainingTypes} 項商品`);
-    }
-
-    return previewItems.join('<br>');
-}
-
 function changeCardQuantity(productId, delta) {
     const current = getCardQuantity(productId);
     const next = Math.max(1, current + delta);
@@ -494,20 +478,6 @@ function resetCardQuantity(productId) {
     cardQuantities[productId] = 1;
 }
 
-function getCardImageIndex(productId) {
-    return cardImageIndexes[productId] || 0;
-}
-
-function changeCardImage(productId, delta) {
-    const product = products.find(p => p.id === productId);
-    if (!product || !product.images || product.images.length <= 1) return;
-
-    const current = getCardImageIndex(productId);
-    const next = (current + delta + product.images.length) % product.images.length;
-    cardImageIndexes[productId] = next;
-    renderProducts();
-}
-
         // 3. 渲染商品列表
         function renderProducts() {
     productGrid.innerHTML = products.map(product => {
@@ -516,18 +486,8 @@ function changeCardImage(productId, delta) {
         return `
         <div class="bg-white rounded-2xl p-4 border border-[#D2E9FF] shadow-sm hover:shadow-md transition-all group flex flex-col">
             <div class="aspect-square bg-[#F4FAFF] rounded-md mb-4 overflow-hidden relative">
-    <img src="${product.images[getCardImageIndex(product.id)]}" alt="${product.name}" class="w-full h-full object-cover" />
-
-    ${product.images.length > 1 ? `
-        <button type="button" onclick="changeCardImage(${product.id}, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 text-[#708090] shadow flex items-center justify-center hover:bg-white">
-            ‹
-        </button>
-        <button type="button" onclick="changeCardImage(${product.id}, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 text-[#708090] shadow flex items-center justify-center hover:bg-white">
-            ›
-        </button>
-    ` : ''}
-
-    <div class="absolute inset-0 bg-deepsea-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+    <img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-deepsea-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 
             <h4 class="text-[#708090] font-medium mb-1 truncate">${product.name}</h4>
@@ -628,9 +588,13 @@ function changeCardImage(productId, delta) {
 
             cartItemsContainer.innerHTML = cart.map(item => `
                 <div class="flex gap-4 items-center animate-in fade-in slide-in-from-right-4 duration-300">
-                    <div class="w-16 h-16 bg-abyss rounded border border-deepsea-800 flex-shrink-0 flex items-center justify-center text-[10px] text-gray-600">
-                        IMG
-                    </div>
+                    <div class="w-16 h-16 bg-abyss rounded border border-deepsea-800 flex-shrink-0 overflow-hidden">
+    <img
+        src="${item.images && item.images[0] ? item.images[0] : 'images/poster-1.jpg'}"
+        alt="${item.name}"
+        class="w-full h-full object-cover"
+    />
+</div>
                     <div class="flex-1">
                         <h4 class="text-white text-sm font-bold">
     ${item.name}
@@ -675,8 +639,6 @@ const total = subtotal + shippingFee;
     const deliveryMethod = getDeliveryMethod();
 const customerEmail = document.getElementById('email').value;
 
-const orderSummaryHtml = buildCompactOrderSummary(cart);
-
 const orderData = {
     name: document.getElementById('name').value,
     email: document.getElementById('email').value,
@@ -703,28 +665,14 @@ const orderData = {
         if (result.status === "success") {
             successMessage.innerHTML = `
 感謝你的支持，尼莫已收到你的訂單。<br><br>
-訂單編號：${result.orderId}<br><br>
-
-<div style="text-align:left; background:#f8fbff; border:1px solid #d2e9ff; border-radius:12px; padding:12px; margin:12px 0;">
-    <div style="font-weight:600; color:#708090; margin-bottom:8px;">你剛剛下單的是</div>
-    <div style="line-height:1.8; color:#708090;">
-        ${orderSummaryHtml}
-    </div>
-</div>
-
-取貨方式：${deliveryMethod === 'pickup' ? '專場現場取' : '寄送到填寫地址'}<br>
+訂單編號：${result.orderId}<br>
 訂單金額：NT$ ${total}<br><br>
 
 匯款資訊已寄送到你的信箱：<br>
 <span style="font-weight:600; color:#ffffff;">${customerEmail}</span><br><br>
 
-詳細訂單內容與付款資訊，請到信箱查看。<br>
-請於 24 小時內完成匯款。
-
-${deliveryMethod === 'pickup'
-  ? '若周邊當天未能即時備妥，將改寄填寫地址，並後續補收運費 NT$120。'
-  : '我們將依你填寫的地址安排寄送。'
-}
+請到信箱查看完整訂單內容與付款資訊，<br>
+並於 24 小時內完成匯款。
 `;
             successModal.classList.remove('hidden');
             toggleCart(false);
