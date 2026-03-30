@@ -267,7 +267,7 @@
     <!-- 3. 單曲區 -->
     <section id="music" class="py-24 px-6 bg-[#F4FAFF]">
     <div class="max-w-5xl mx-auto">
-        <h3 class="text-3xl font-bold text-[#708090] mb-12 tracking-widest text-center">深海裡的聲音</h3>
+        <h3 class="text-3xl font-bold text-[#708090] mb-12 tracking-widest text-center">最新單曲</h3>
 
         <div class="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-8 items-center bg-white border border-[#D2E9FF] rounded-3xl p-6 md:p-8 shadow-sm">
             <div class="w-full aspect-square overflow-hidden rounded-2xl bg-[#FCFCFC]">
@@ -280,12 +280,8 @@
 
             <div>
                 <p class="text-xs tracking-[0.25em] text-[#708090] mb-3">NEMO 徐毓翎</p>
-                <h4 class="text-2xl md:text-3xl font-bold text-[#708090] mb-3">《我是一隻魚》專場概念專輯</h4>
-                <p class="text-sm md:text-base leading-7 text-[#708090] mb-6">
-                    三首歌收進同一張作品裡，像同一片水域中的三段情緒。
-                    你可以從不同的入口進入，慢慢靠近這次專場的世界。
-                </p>
-
+                <h4 class="text-2xl md:text-3xl font-bold text-[#708090] mb-3">即將發行</h4>
+                
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <a href="https://你的連結1" target="_blank" class="rounded-full border border-[#D2E9FF] px-4 py-3 text-center text-sm font-semibold text-[#708090] hover:bg-[#F4FAFF] transition-all">
                         盡情的哭
@@ -299,7 +295,7 @@
                 </div>
 
                 <p class="text-xs text-slate-400 mt-4">
-                    可放 Spotify / YouTube / StreetVoice / SoundCloud 連結
+                    未完待續
                 </p>
             </div>
         </div>
@@ -347,88 +343,117 @@
         const products = [
     {
         id: 1,
-        name: "門票",
-        price: 500,
-        description: "《我是一隻魚》專場單人門票，採現場報到入場，不寄送實體票券。",
-        images: ["images/poster-1.jpg"]
+        name: "✨最具紀念價值全包套裝",
+        price: 5238,
+        description: "《我是一隻魚》專場單人門票，全座席✨，採現場報到入場，不寄送實體票券。",
+        images: ["images/all1-1.jpg", "images/all1-2.jpg"]
     },
     {
         id: 2,
-        name: "雙人門票",
-        price: 500,
-        description: "《我是一隻魚》專場雙人門票，採現場報到入場，不寄送實體票券。",
-        images: ["images/poster-1.jpg"]
+        name: "✨周邊套裝",
+        price: 2380,
+        description: "專場限定明信片二入組，適合收藏或寄送。",
+        images: ["images/all2-1.jpg", "images/all2-2.jpg"]
     },
     {
         id: 3,
-        name: "專場 T-shirt",
-        price: 500,
-        description: "專場限定 T-shirt，布料柔軟、版型寬鬆，適合日常穿搭與收藏。",
-        images: ["images/tshirt-1.jpg", "images/tshirt-2.jpg", "images/tshirt-3.jpg"],
-        sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
+        name: "✨門票",
+        price: 700,
+        description: "《我是一隻魚》專場單人門票，全座席✨，採現場報到入場，不寄送實體票券。",
+        images: ["images/poster-1.jpg"]
     },
     {
         id: 4,
-        name: "個人寫真集",
-        price: 500,
+        name: "✨雙人門票",
+        price: 1200,
+        description: "《我是一隻魚》專場雙人門票，全座席✨，採現場報到入場，不寄送實體票券。",
+        images: ["images/poster-1.jpg"]
+    },
+    {
+        id: 5,
+        name: "✨專場 T-shirt（黑）",
+        price: 800,
+        description: "專場限定 T-shirt，布料柔軟、版型寬鬆，適合日常穿搭與收藏。",
+        images: ["images/tshirtb-1.jpg", "images/tshirtb-2.jpg", "images/tshirtb-3.jpg"],
+        sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
+    },
+    {
+        id: 6,
+        name: "✨專場 T-shirt（白）",
+        price: 850,
+        description: "專場限定 T-shirt，布料柔軟、版型寬鬆，適合日常穿搭與收藏。",
+        images: ["images/tshirtw-1.jpg", "images/tshirtw-2.jpg", "images/tshirtw-3.jpg"],
+        sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
+    },
+    {
+        id: 7,
+        name: "✨個人寫真集",
+        price: 520,
         description: "收錄專場視覺與個人拍攝影像，作為這次演出的紀念收藏。",
         images: ["images/book-1.jpg", "images/book-2.jpg"]
     },
     {
-        id: 5,
+        id: 8,
         name: "✨專場簽名海報",
         price: 0,
         description: "此為贈品，滿$520贈送一張，依此類推（多張請自行放入購物車，否則只會贈送一張）\n攝影師：Dot典",
         images: ["images/poster-1.jpg"]
     },
     {
-        id: 6,
+        id: 9,
         name: "✨雙緹花專場運動毛巾",
         price: 600,
         description: "（此為AI示意圖）\n代表夢想的星星人，帶著Nemo和Dany潛入水底，除了一起完成《我是一隻魚》專場，也要陪伴你們擦乾每一次汗水雨水和淚水的瞬間（？）專場限定販售。\n\n材質：雙緹花100%純棉\n尺寸：22*110cm\n設計師：Yan Lee",
         images: ["images/towel-1.jpg", "images/towel-2.jpg"]
     },
     {
-        id: 7,
-        name: "盛開單曲NFC吊飾",
+        id: 10,
+        name: "✨盛開單曲NFC吊飾",
         price: 520,
         description: "由設計師Yan Lee依照盛開歌曲情境風格設計出的NFC吊飾，是Nemo推出的第一首單曲，非常具有紀念價值，限量販售，售完不補。",
         images: ["images/keychain-1.jpg", "images/keychain-2.jpg", "images/keychain-3.jpg", "images/keychain-4.jpg"]
     },
     {
-        id: 8,
-        name: "魚頭人打火機",
-        price: 500,
+        id: 11,
+        name: "✨魚頭人打火機",
+        price: 138,
         description: "充滿活力的魚頭人陪伴你度過生活中的每一次呼吸、浪漫時光、生日慶典，希望你每天都Have a nice day，專場限定販售。\n\n設計師：Yan Lee",
         images: ["images/lighter-1.jpg", "images/lighter-2.jpg"]
     },
     {
-        id: 9,
-        name: "小卡卡包+貓咪吊飾",
-        price: 500,
+        id: 12,
+        name: "✨小卡卡包+貓咪吊飾",
+        price: 600,
         description: "透明卡夾，適合放入小卡與日常配戴。",
         images: ["images/小卡卡包-1.jpg", "images/小卡卡包-2.jpg", "images/小卡卡包-3.jpg"]
     },
     {
-        id: 10,
-        name: "小卡盲包",
-        price: 500,
+        id: 13,
+        name: "✨小卡盲包",
+        price: 100,
         description: "隨機小卡盲包，收藏樂趣滿滿。",
         images: ["images/photocard-1.jpg", "images/photocard-2.jpg"]
     },
     {
-        id: 11,
-        name: "魚頭人徽章",
-        price: 500,
+        id: 14,
+        name: "✨魚頭人徽章",
+        price: 238,
         description: "專場限定徽章，可別在包包或衣服上。",
         images: ["images/badge-1.jpg", "images/badge-2.jpg"]
     },
     {
-        id: 12,
-        name: "明信片2入組",
-        price: 500,
+        id: 15,
+        name: "✨明信片2入組",
+        price: 120,
         description: "專場限定明信片二入組，適合收藏或寄送。",
         images: ["images/postcard-1.jpg", "images/postcard-2.jpg"]
+    },
+    {
+        id: 16,
+        name: "✨專場提袋",
+        price: 5,
+        description: "專場限定明信片二入組，適合收藏或寄送。",
+        images: ["images/bag-1.jpg", "images/bag-2.jpg"]
     }
 ];
        
