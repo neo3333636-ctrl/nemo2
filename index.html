@@ -341,18 +341,20 @@
     <script>
         // 1. 商品數據
         const products = [
-    {
-        id: 1,
-        name: "✨就最支持全包套組（含專場票）",
-        price: 5238,
-        description: "給就最支持的你的專屬套組(⁎⁍̴̛ᴗ⁍̴̛⁎)\n專場門票*1 + 周邊商品全套*1 +小卡盲包*10\n\n內含：盛開單曲NFC吊飾+ 魚頭人打火機+ 雙緹花專場運動毛巾+ 小卡卡夾+貓咪吊飾（項鍊）+ 魚頭人徽章+ 專場T-shirt黑&白 +Nemo個人寫真集+ 明信片2入組+ 專場提袋+專場簽名海報+小卡盲包*10\n（原價$6091）\n\n已用google表單訂票的朋友Nemo會另外退還票錢給你💖",
-        images: ["images/all1-1.jpg"]
+   {
+    id: 1,
+    name: "✨就最支持全包套組（含專場票）",
+    price: 5238,
+    description: "4/12前訂購可於專場當天現取❗️\n給就最支持的你的專屬套組(⁎⁍̴̛ᴗ⁍̴̛⁎)\n專場門票*1 + 周邊商品全套*1 +小卡盲包*10\n\n內含：盛開單曲NFC吊飾+ 魚頭人打火機+ 雙緹花專場運動毛巾+ 小卡卡夾+貓咪吊飾（項鍊）+ 魚頭人徽章+ 專場T-shirt黑&白 +Nemo個人寫真集+ 明信片2入組+ 專場提袋+專場簽名海報+小卡盲包*10\n（原價$6091）\n\n已用google表單訂票的朋友Nemo會另外退還票錢給你💖",
+    images: ["images/all1-1.jpg"],
+    bundleShirtSizes: true,
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
     },
     {
         id: 2,
         name: "✨愛38翎周邊套裝",
         price: 2380,
-        description: "專場限定周邊套組，展現愛38翎的心(⁎⁍̴̛ᴗ⁍̴̛⁎）\n\n內含：盛開單曲NFC吊飾+ 魚頭人打火機+ 雙緹花專場運動毛巾+ 小卡卡夾+貓咪吊飾（項鍊）+ 魚頭人徽章+Nemo個人寫真集+專場提袋+專場簽名海報+小卡盲包*1\n（原價$2716）",
+        description: "4/20前訂購可於專場當天現取❗️\n專場限定周邊套組，展現愛38翎的心(⁎⁍̴̛ᴗ⁍̴̛⁎）\n\n內含：盛開單曲NFC吊飾+ 魚頭人打火機+ 雙緹花專場運動毛巾+ 小卡卡夾+貓咪吊飾（項鍊）+ 魚頭人徽章+Nemo個人寫真集+專場提袋+專場簽名海報+小卡盲包*1\n（原價$2716）",
         images: ["images/all2-1.jpg"]
     },
     {
@@ -389,7 +391,6 @@
         price: 600,
         description: "此為AI示意圖）\n實用具機能性的卡夾套組，除了能放置信用卡、證件、零錢外，更重要的是能讓你秀出你珍藏的偶像小卡，配上貓咪吊飾更增添可愛，貓咪吊飾還能變換成項鍊，成為你的時尚配件！限量販售，售完不補。\n\n內含：卡夾+掛繩+貓咪吊飾+銀色項鍊\n卡夾材質：頭層牛皮\n設計師：Yan Lee",
         images: ["images/小卡卡包-1.jpg", "images/小卡卡包-2.jpg", "images/小卡卡包-3.jpg"]
-        sizes: ["S", "M", "L", "XL", "2XL", "3XL", "雙色不同SIZE請備註"]
     },
     {
         id: 8,
@@ -423,14 +424,14 @@
         id: 12,
         name: "✨Nemo個人寫真集",
         price: 520,
-        description: "我是一隻魚》專場概念明信片，最好的收藏，一定是明信片。\n\n攝影師：典Dot\設計師：Yan Lee",
+        description: "4/20前訂購可於專場當天現取❗️\n我是一隻魚》專場概念明信片，最好的收藏，一定是明信片。\n\n攝影師：典Dot\設計師：Yan Lee",
         images: ["images/book-1.jpg", "images/book-2.jpg"]
     },
     {
         id: 13,
         name: "✨專場T shirt（噴墨白）",
         price: 850,
-        description: "4/7前訂購可於專場當天現取。\n設計師Yan Lee嘔心瀝血為專場所設計的T-shirt，落肩重磅的好版型，一別聽團仔氣息，讓你一穿上就變日系潮潮。因白色款設計特殊，使用噴墨製法，因此價格較高。\n材質：100%棉",
+        description: "4/12前訂購可於專場當天現取❗️\n設計師Yan Lee嘔心瀝血為專場所設計的T-shirt，落肩重磅的好版型，一別聽團仔氣息，讓你一穿上就變日系潮潮。因白色款設計特殊，使用噴墨製法，因此價格較高。\n材質：100%棉",
         images: ["images/tshirtw-1.jpg", "images/tshirtw-2.jpg", "images/tshirtw-3.jpg"],
         sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
     },
@@ -438,7 +439,7 @@
         id: 14,
         name: "✨專場T shirt（印刷黑）",
         price: 800,
-        description: "4/7前訂購可於專場當天現取。\n設計師Yan Lee嘔心瀝血為專場所設計的T-shirt，落肩重磅的好版型，一別聽團仔氣息，讓你一穿上就變日系潮潮。一別白色的清新感，黑色讓你更帥氣。\n材質：100%棉",
+        description: "4/12前訂購可於專場當天現取❗️\n設計師Yan Lee嘔心瀝血為專場所設計的T-shirt，落肩重磅的好版型，一別聽團仔氣息，讓你一穿上就變日系潮潮。一別白色的清新感，黑色讓你更帥氣。\n材質：100%棉",
         images: ["images/tshirtb-1.jpg", "images/tshirtb-2.jpg", "images/tshirtb-3.jpg"],
         sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
     },
@@ -766,7 +767,8 @@ function renderProductModal() {
 
     if (!product) return;
 
-    const hasSizes = Array.isArray(product.sizes) && product.sizes.length > 0;
+    const hasBundleShirtSizes = product.bundleShirtSizes === true;
+    const hasSingleSizes = !hasBundleShirtSizes && Array.isArray(product.sizes) && product.sizes.length > 0;
 
     content.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -806,7 +808,37 @@ function renderProductModal() {
                     </p>
                 </div>
 
-                ${hasSizes ? `
+                ${hasBundleShirtSizes ? `
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-slate-500 mb-2">白色 T-shirt 尺寸</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${product.sizes.map(size => `
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="bundleWhiteSize" value="${size}" class="hidden peer">
+                                    <span class="inline-flex items-center justify-center min-w-[52px] px-4 py-2 rounded-full border border-[#D2E9FF] text-sm text-[#708090] peer-checked:bg-[#D2E9FF] peer-checked:text-sky-800">
+                                        ${size}
+                                    </span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-slate-500 mb-2">黑色 T-shirt 尺寸</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${product.sizes.map(size => `
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="bundleBlackSize" value="${size}" class="hidden peer">
+                                    <span class="inline-flex items-center justify-center min-w-[52px] px-4 py-2 rounded-full border border-[#D2E9FF] text-sm text-[#708090] peer-checked:bg-[#D2E9FF] peer-checked:text-sky-800">
+                                        ${size}
+                                    </span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
+                ${hasSingleSizes ? `
                     <div class="mb-6">
                         <h4 class="text-sm font-semibold text-slate-500 mb-2">尺寸選擇</h4>
                         <div class="flex flex-wrap gap-2">
@@ -821,14 +853,16 @@ function renderProductModal() {
                         </div>
                     </div>
                 ` : ''}
-<div class="mb-6">
-    <h4 class="text-sm font-semibold text-slate-500 mb-2">數量</h4>
-    <div class="flex items-center gap-3">
-        <button onclick="changeModalQuantity(-1)" class="w-9 h-9 rounded-full border border-[#D2E9FF] text-[#708090] font-bold">-</button>
-        <span class="min-w-[24px] text-center text-[#708090] font-semibold">${currentProductQuantity}</span>
-        <button onclick="changeModalQuantity(1)" class="w-9 h-9 rounded-full border border-[#D2E9FF] text-[#708090] font-bold">+</button>
-    </div>
-</div>
+
+                <div class="mb-6">
+                    <h4 class="text-sm font-semibold text-slate-500 mb-2">數量</h4>
+                    <div class="flex items-center gap-3">
+                        <button onclick="changeModalQuantity(-1)" class="w-9 h-9 rounded-full border border-[#D2E9FF] text-[#708090] font-bold">-</button>
+                        <span class="min-w-[24px] text-center text-[#708090] font-semibold">${currentProductQuantity}</span>
+                        <button onclick="changeModalQuantity(1)" class="w-9 h-9 rounded-full border border-[#D2E9FF] text-[#708090] font-bold">+</button>
+                    </div>
+                </div>
+
                 <button onclick="addCurrentProductToCart()" class="mt-auto w-full bg-[#D2E9FF] py-3 rounded-full font-bold text-sky-800 hover:bg-sky-200 transition-all">
                     加入購物車
                 </button>
@@ -862,8 +896,22 @@ function addCurrentProductToCart() {
     if (!currentProduct) return;
 
     let selectedSize = null;
+    let bundleWhiteSize = null;
+    let bundleBlackSize = null;
 
-    if (currentProduct.sizes && currentProduct.sizes.length > 0) {
+    if (currentProduct.bundleShirtSizes === true) {
+        const whiteChecked = document.querySelector('input[name="bundleWhiteSize"]:checked');
+        const blackChecked = document.querySelector('input[name="bundleBlackSize"]:checked');
+
+        if (!whiteChecked || !blackChecked) {
+            alert('請先選擇白色與黑色 T-shirt 尺寸');
+            return;
+        }
+
+        bundleWhiteSize = whiteChecked.value;
+        bundleBlackSize = blackChecked.value;
+        selectedSize = `白色 ${bundleWhiteSize} / 黑色 ${bundleBlackSize}`;
+    } else if (currentProduct.sizes && currentProduct.sizes.length > 0) {
         const checked = document.querySelector('input[name="productSize"]:checked');
         if (!checked) {
             alert('請先選擇尺寸');
@@ -872,23 +920,28 @@ function addCurrentProductToCart() {
         selectedSize = checked.value;
     }
 
-    const cartItemId = selectedSize ? `${currentProduct.id}-${selectedSize}` : `${currentProduct.id}`;
+    const cartItemId = currentProduct.bundleShirtSizes === true
+        ? `${currentProduct.id}-white-${bundleWhiteSize}-black-${bundleBlackSize}`
+        : (selectedSize ? `${currentProduct.id}-${selectedSize}` : `${currentProduct.id}`);
+
     const existingItem = cart.find(item => item.cartItemId === cartItemId);
 
     if (existingItem) {
-    existingItem.quantity += currentProductQuantity;
-} else {
-    cart.push({
-        ...currentProduct,
-        cartItemId,
-        selectedSize,
-        quantity: currentProductQuantity
-    });
-}
+        existingItem.quantity += currentProductQuantity;
+    } else {
+        cart.push({
+            ...currentProduct,
+            cartItemId,
+            selectedSize,
+            bundleWhiteSize,
+            bundleBlackSize,
+            quantity: currentProductQuantity
+        });
+    }
 
-saveCart();
-renderCart();
-closeProductModal();
+    saveCart();
+    renderCart();
+    closeProductModal();
 }
 
 function closeProductModal() {
