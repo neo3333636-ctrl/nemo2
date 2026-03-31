@@ -137,11 +137,11 @@
                     </div>
                     <div>
                         <label class="block text-xs text-gray-500 mb-1">匯款後五碼 *</label>
-                        <input type="text" id="bankId" required maxlength="5" class="w-full bg-abyss border border-deepsea-800 rounded px-4 py-2 text-sm text-white transition-all" placeholder="12345">
+                        <input type="text" id="bankId" required maxlength="5" class="w-full bg-abyss border border-deepsea-800 rounded px-4 py-2 text-sm text-white transition-all" placeholder="00000">
                     </div>
                     <div>
                         <label class="block text-xs text-gray-500 mb-1">備註</label>
-                        <textarea id="note" rows="2" class="w-full bg-abyss border border-deepsea-800 rounded px-4 py-2 text-sm text-white transition-all" placeholder="有什麼想告訴我們的嗎？"></textarea>
+                        <textarea id="note" rows="2" class="w-full bg-abyss border border-deepsea-800 rounded px-4 py-2 text-sm text-white transition-all" placeholder="有什麼想對Nemo說的嗎？"></textarea>
                     </div>
                 </form>
             </div>
@@ -295,7 +295,7 @@
                 </div>
 
                 <p class="text-xs text-slate-400 mt-4">
-                    未完待續
+                    未完待續...
                 </p>
             </div>
         </div>
@@ -343,58 +343,59 @@
         const products = [
     {
         id: 1,
-        name: "✨最具紀念價值全包套裝",
+        name: "✨就最支持全包套組（含專場票）",
         price: 5238,
-        description: "《我是一隻魚》專場單人門票，全座席✨，採現場報到入場，不寄送實體票券。",
+        description: "給就最支持的你的專屬套組(⁎⁍̴̛ᴗ⁍̴̛⁎)\n專場門票*1 + 周邊商品全套*1 +小卡盲包*10\n\n內含：盛開單曲NFC吊飾+ 魚頭人打火機+ 雙緹花專場運動毛巾+ 小卡卡夾+貓咪吊飾（項鍊）+ 魚頭人徽章+ 專場T-shirt黑&白 +Nemo個人寫真集+ 明信片2入組+ 專場提袋+專場簽名海報+小卡盲包*10\n（原價$6091）\n\n已用google表單訂票的朋友Nemo會另外退還票錢給你💖",
         images: ["images/all1-1.jpg"]
     },
     {
         id: 2,
-        name: "✨周邊套裝",
+        name: "✨愛38翎周邊套裝",
         price: 2380,
-        description: "專場限定周邊套組，展現愛38翎的心(⁎⁍̴̛ᴗ⁍̴̛⁎）\n\n內含：盛開單曲NFC吊飾+ 魚頭人打火機+ 雙緹花專場運動毛巾+ 小卡卡夾+貓咪吊飾（項鍊）+ 魚頭人徽章+ Nemo個人寫真集+小卡盲包*1（原價$2716）。",
+        description: "專場限定周邊套組，展現愛38翎的心(⁎⁍̴̛ᴗ⁍̴̛⁎）\n\n內含：盛開單曲NFC吊飾+ 魚頭人打火機+ 雙緹花專場運動毛巾+ 小卡卡夾+貓咪吊飾（項鍊）+ 魚頭人徽章+Nemo個人寫真集+專場提袋+專場簽名海報+小卡盲包*1\n（原價$2716）",
         images: ["images/all2-1.jpg"]
     },
     {
         id: 3,
-        name: "✨門票",
+        name: "✨專場門票",
         price: 700,
-        description: "《我是一隻魚》專場單人門票，全座席✨，採現場報到入場，不寄送實體票券。",
+        description: "《我是一隻魚》專場單人門票，全座席。Nemo的創作單曲發表會，請來厲害的樂手老師們，帶來一場沈浸式的海底音樂盛宴。\n\n❗️已用表單訂票的朋友無需重複下單\n❗️採現場報到入場，不寄送實體票券。",
         images: ["images/poster-1.jpg"]
     },
     {
         id: 4,
-        name: "✨雙人門票",
+        name: "✨專場雙人門票",
         price: 1200,
-        description: "《我是一隻魚》專場雙人門票，全座席✨，採現場報到入場，不寄送實體票券。",
+        description: "《我是一隻魚》專場單人門票，全座席。Nemo的創作單曲發表會，請來厲害的樂手老師們，帶來一場沈浸式的海底音樂盛宴，和你的朋友一起來參與吧！\n\n❗️已用表單訂票的朋友無需重複下單\n❗️採現場報到入場，不寄送實體票券。",
         images: ["images/poster-1.jpg"]
     },
     {
         id: 5,
         name: "✨雙緹花專場運動毛巾",
         price: 600,
-        description: "（此為AI示意圖）\n代表夢想的星星人，帶著Nemo和Dany潛入水底，除了一起完成《我是一隻魚》專場，也要陪伴你們擦乾每一次汗水雨水和淚水的瞬間（？）專場限定販售。\n\n材質：雙緹花100%純棉\n尺寸：22*110cm\n設計師：Yan Lee",
+        description: "（此為AI示意圖）\n代表夢想的星星人，帶著Nemo和Dany潛入水底，除了一起完成《我是一隻魚》專場，也要陪伴你們擦乾每一次汗水雨水和淚水的瞬間（？）限量販售，售完不補。\n\n材質：雙緹花100%純棉\n尺寸：22*110cm\n設計師：Yan Lee",
         images: ["images/towel-1.jpg", "images/towel-2.jpg"]
     },
     {
         id: 6,
         name: "✨魚頭人徽章",
         price: 238,
-        description: "專場限定徽章，可別在包包或衣服上。",
+        description: "（此為AI示意圖）\n充滿紀念價值的魚頭人徽章，別在包包上更增添你與眾不同的氣質（尤其是那個腿毛），專場限定販售。\n\n設計師：Yan Lee",
         images: ["images/badge-1.jpg", "images/badge-2.jpg"]
     },
     {
         id: 7,
-        name: "✨小卡卡夾+貓咪吊飾",
+        name: "✨小卡卡夾+貓咪吊飾（項鍊）",
         price: 600,
-        description: "透明卡夾，適合放入小卡與日常配戴。",
+        description: "此為AI示意圖）\n實用具機能性的卡夾套組，除了能放置信用卡、證件、零錢外，更重要的是能讓你秀出你珍藏的偶像小卡，配上貓咪吊飾更增添可愛，貓咪吊飾還能變換成項鍊，成為你的時尚配件！限量販售，售完不補。\n\n內含：卡夾+掛繩+貓咪吊飾+銀色項鍊\n卡夾材質：頭層牛皮\n設計師：Yan Lee",
         images: ["images/小卡卡包-1.jpg", "images/小卡卡包-2.jpg", "images/小卡卡包-3.jpg"]
+        sizes: ["S", "M", "L", "XL", "2XL", "3XL", "雙色不同SIZE請備註"]
     },
     {
         id: 8,
         name: "✨小卡盲包",
         price: 100,
-        description: "隨機小卡盲包，收藏樂趣滿滿。",
+        description: "Nemo小卡，共五種款式（含附上Nemo小巧思的隱藏版），你能全部收集到嗎？",
         images: ["images/photocard-1.jpg", "images/photocard-2.jpg"]
     },
     {
@@ -415,29 +416,29 @@
         id: 11,
         name: "✨明信片2入組",
         price: 120,
-        description: "專場限定明信片二入組，適合收藏或寄送。",
+        description: "我是一隻魚》專場概念明信片，最好的收藏，一定是明信片。\n\n攝影師：典Dot\設計師：Yan Lee",
         images: ["images/postcard-1.jpg", "images/postcard-2.jpg"]
     },
     {
         id: 12,
         name: "✨Nemo個人寫真集",
         price: 520,
-        description: "收錄專場視覺與個人拍攝影像，作為這次演出的紀念收藏。",
+        description: "我是一隻魚》專場概念明信片，最好的收藏，一定是明信片。\n\n攝影師：典Dot\設計師：Yan Lee",
         images: ["images/book-1.jpg", "images/book-2.jpg"]
     },
     {
         id: 13,
-        name: "✨專場 T-shirt（白）",
+        name: "✨專場T shirt（噴墨白）",
         price: 850,
-        description: "專場限定 T-shirt，布料柔軟、版型寬鬆，適合日常穿搭與收藏。",
+        description: "4/7前訂購可於專場當天現取。\n設計師Yan Lee嘔心瀝血為專場所設計的T-shirt，落肩重磅的好版型，一別聽團仔氣息，讓你一穿上就變日系潮潮。因白色款設計特殊，使用噴墨製法，因此價格較高。\n材質：100%棉",
         images: ["images/tshirtw-1.jpg", "images/tshirtw-2.jpg", "images/tshirtw-3.jpg"],
         sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
     },
     {
         id: 14,
-        name: "✨專場 T-shirt（黑）",
+        name: "✨專場T shirt（印刷黑）",
         price: 800,
-        description: "專場限定 T-shirt，布料柔軟、版型寬鬆，適合日常穿搭與收藏。",
+        description: "4/7前訂購可於專場當天現取。\n設計師Yan Lee嘔心瀝血為專場所設計的T-shirt，落肩重磅的好版型，一別聽團仔氣息，讓你一穿上就變日系潮潮。一別白色的清新感，黑色讓你更帥氣。\n材質：100%棉",
         images: ["images/tshirtb-1.jpg", "images/tshirtb-2.jpg", "images/tshirtb-3.jpg"],
         sizes: ["S", "M", "L", "XL", "2XL", "3XL"]
     },
@@ -445,14 +446,14 @@
         id: 15,
         name: "✨專場提袋",
         price: 5,
-        description: "專場限定明信片二入組，適合收藏或寄送。",
+        description: "《我是一隻魚》Logo塑膠提袋，最適合拿來裝你買的各種專場周邊(⁎⁍̴̛ᴗ⁍̴̛⁎)",
         images: ["images/bag-1.jpg", "images/bag-2.jpg"]
     },
     {
         id: 16,
         name: "✨專場簽名海報",
         price: 0,
-        description: "此為贈品，滿$520贈送一張，依此類推（多張請自行放入購物車，否則只會贈送一張）\n攝影師：Dot典",
+        description: "此為贈品，滿$520贈送一張，依此類推（多張請自行放入購物車，否則只會贈送一張）\n\n攝影師：Dot典",
         images: ["images/poster-1.jpg"]
     }
 ];
@@ -897,3 +898,7 @@ function closeProductModal() {
     </script>
 </body>
 </html>
+                
+                
+                
+                
